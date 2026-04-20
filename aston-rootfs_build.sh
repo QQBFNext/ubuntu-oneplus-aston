@@ -1,5 +1,4 @@
 #!/bin/sh
-VERSION="25.10"
 
 cd $2
 
@@ -8,8 +7,8 @@ mkfs.ext4 rootfs.img
 mkdir rootdir
 mount -o loop rootfs.img rootdir
 
-wget https://cdimage.ubuntu.com/ubuntu-base/releases/$VERSION/release/ubuntu-base-$VERSION-base-arm64.tar.gz
-tar xzvf ubuntu-base-$VERSION-base-arm64.tar.gz -C rootdir
+wget https://cdimage.ubuntu.com/ubuntu-base/releases/26.04/beta/ubuntu-base-26.04-beta-base-arm64.tar.gz
+tar xzvf ubuntu-base-26.04-beta-base-arm64.tar.gz -C rootdir
 
 mkdir -p rootdir/data/local/tmp
 mount --bind /dev rootdir/dev
